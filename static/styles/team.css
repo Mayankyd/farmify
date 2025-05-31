@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Default Body Background */
+body {
+  background: url('/static/assets/image1.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+/* Background Blur Overlay */
+.blur-overlay {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Slight overlay */
+  backdrop-filter: blur(10px); /* Blur effect */
+  z-index: 999; /* Above everything */
+  display: none; /* Hidden by default */
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+/* Logo */
+.logo {
+  background-image: url('/static/styles/assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 180px;
+  height: 60px;
+  display: inline-block;
+  -webkit-filter: drop-shadow(2px 0 white) 
+  drop-shadow(-2px 0 white) 
+  drop-shadow(0 2px white) 
+  drop-shadow(0 -2px white);
+  filter: drop-shadow(2px 0 white) 
+  drop-shadow(-2px 0 white) 
+  drop-shadow(0 2px white) 
+  drop-shadow(0 -2px white);
+}
+
+/* Navigation Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+/* Navigation Links */
+nav ul li a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+  padding: 8px 15px;
+}
+
+nav ul li a:hover {
+  color: #ff5722;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropbtn:hover {
+  background-color: #45a049;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: white;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Show dropdown when class is added */
+.dropdown-content.show {
+  display: block;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+  color: black;
+  padding: 12px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px 15px;
+  }
+
+  nav ul {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .dropbtn {
+      width: 100%;
+      text-align: center;
+  }
+
+  .dropdown-content {
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+}
+
+/* Ensure the section takes full width */
+.u-mainbg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 140px 40px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title Styling */
+.u-text-1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid Container */
+.u-repeater {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px; /* Increased spacing between cards */
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Member Card */
+.u-container-style1 {
+  background: rgba(255, 255, 255, 0.9); /* Light background */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: 300px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover Effect */
+.u-container-style1:hover {
+  transform: scale(1.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.u-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* Role & Name */
+.u-text-role, .u-text-nm {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.u-text-role {
+  font-size: 1rem;
+  color: gray;
+}
+
+.u-text-nm {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  background-color: black;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
